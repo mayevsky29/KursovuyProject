@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebLibrary.EFContext
+namespace WebLibrary.EFContext.Data
 {
-    public class DataContext : Identytikljds`
+    public class UserBooks
     {
     }
 }
