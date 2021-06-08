@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebLibrary.EFContext
 {
-    public class DataContext : Identytikljds`
+    public class DataContext : Identity
     {
     }
 }
