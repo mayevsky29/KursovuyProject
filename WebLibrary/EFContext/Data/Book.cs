@@ -11,7 +11,7 @@ namespace WebLibrary.EFContext.Data
     public class Book
     {
         [Key]
-        public int  Id { get; set; }
+        public long  Id { get; set; }
         [Required, StringLength(255)]
         public string Name { get; set; }
         [Required, StringLength(255)]
@@ -19,6 +19,6 @@ namespace WebLibrary.EFContext.Data
         [Required, StringLength(4000)]
         public string Description { get; set; }
         public int Year { get; set; }
-        
+        public virtual ICollection<UserBook> UserBooks { get; set; }
     }
 }
