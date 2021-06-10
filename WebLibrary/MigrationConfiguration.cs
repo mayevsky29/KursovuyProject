@@ -39,7 +39,7 @@ namespace WebLibrary
                         UserName = "user@gmail.com"
                     };
                     var result = userManager.CreateAsync(user, "12345678").Result;
-                    //if(result.Succeeded)
+                    
                     result = userManager.AddToRoleAsync(user, Roles.Admin).Result;
                 }
 

@@ -37,7 +37,7 @@ namespace WebGallery.Controllers
 
         [HttpPost]
         [Route("add")]
-        //[Authorize(Roles = Roles.Admin)]
+        [Authorize(Roles = Roles.Admin)]
         public async Task<IActionResult> AddBook([FromBody] Book book)
         {
             return await Task.Run(() =>
@@ -64,9 +64,9 @@ namespace WebGallery.Controllers
         public async Task<IActionResult> UpdateBook([FromRoute] int id, [FromBody] Book book)
         {
             return await Task.Run(() => {
-                //  Отримання елемента для редагування
+                
                 var books = _context.Books.FirstOrDefault(x => x.Id == id);
-                //  Перевірка чи обєкт не пустий
+               
                 if (books != null)
                 {
                     //  Редагування
@@ -75,11 +75,10 @@ namespace WebGallery.Controllers
                     books.Description = book.Description;
                     books.Year = book.Year;
                    
-                    //  Збереження змін
                     _context.SaveChanges();
                 }
 
-                return Ok(new { message = "Дані відредаговано!" });
+                return Ok(new { message = "Дані оновлено!" });
             });
         }
 
